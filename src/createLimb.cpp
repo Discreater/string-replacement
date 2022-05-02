@@ -8,4 +8,5 @@ void createLimb(limbType *limb, int size)
     {
         limb[i] = rand() % 2;
     }
+    limb[size-1] = 1;
 }

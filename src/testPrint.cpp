@@ -5,11 +5,13 @@
 
 using namespace std;
 
-void printLimb(limbType *limb, int size, string limbName)
+void printLimb(limbType *limb, int size, bool carry, string limbName)
 {
     int hamWeight = 0;
+    if(carry)
+        hamWeight += 1;
     cout << limbName << ":\n|";
-    for (int i = 0; i < size; ++i)
+    for (int i = size-1; i >= 0; --i)
     {
         if (limb[i] != 0)
             ++hamWeight;

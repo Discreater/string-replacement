@@ -21,7 +21,7 @@ namespace naive_string_replacement
      * @param size
      * 数字的长度
      */
-    void replace(limbType *newLimb, bool carry, limbType *oriLimb, const int size, const int threshold);
+    void replace(limbType *newLimb, bool& carry, limbType *oriLimb, const int size, const int threshold);
 
     /**
      * @brief 

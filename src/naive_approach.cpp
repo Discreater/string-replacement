@@ -1,13 +1,13 @@
 #include <iostream>
 #include "replacement.h"
 #include "naive_approach.h"
-#include "testPrint.h"
 
 using namespace std;
 
+
 namespace naive_string_replacement
 {
-    void replace(limbType *newLimb, bool carry, limbType *oriLimb, const int size, const int threshold)
+    void replace(limbType *newLimb, bool &carry, limbType *oriLimb, const int size, const int threshold)
     {
         for (int i = 0; i < size; ++i)
         {
@@ -28,6 +28,7 @@ namespace naive_string_replacement
                 }
                 else if (newLimb[cur] == 0)
                 {
+                    // LSB -> MSB
                     if (cnt >= threshold) //
                     {
                         newLimb[startLimb] = -1;
@@ -80,9 +81,10 @@ namespace naive_string_replacement
     void powm(limbType &res, limbType g, limbType gInverse, limbType *e, bool carry, int size, limbType n)
     {
         limbType x = 1;
-        if(carry)
+
+        if (carry)
         {
-            x = x * x % n;
+            x = x * g % n;
         }
         for (int i = size - 1; i >= 0; --i)
         {
