@@ -1,4 +1,5 @@
 #include <iostream>
+#include <gmpxx.h>
 #include "replacement.h"
 #include "naive_approach.h"
 
@@ -7,6 +8,7 @@ using namespace std;
 
 namespace naive_string_replacement
 {
+
     void replace(limbType *newLimb, bool &carry, limbType *oriLimb, const int size, const int threshold)
     {
         for (int i = 0; i < size; ++i)

@@ -15,4 +15,4 @@ include_directories(./include)
 
 
 # link libtorch .a .so
-# target_link_libraries(main gmp)
+target_link_libraries(test gmp)

@@ -4,11 +4,6 @@
 
 using namespace std;
 
-// 1 | -1
-int pattern1[2] = {0, 1};
-// -1 | 1
-int pattern2[2] = {0, -1};
-
 namespace MOF_replacement
 {
     void replace(limbType *newLimb, limbType *oriLimb, const int size)
@@ -32,16 +27,14 @@ namespace MOF_replacement
             // 1 | -1
             if (limb[i] == 1 && limb[i - 1] == -1)
             {
-                limb[i] = pattern1[0];
-                limb[i - 1] = pattern1[1];
-                // --i;
+                limb[i] = 0;
+                limb[i - 1] = 1;
             }
             // -1 | 1
             else if (limb[i] == -1 && limb[i - 1] == 1)
             {
-                limb[i] = pattern2[0];
-                limb[i - 1] = pattern2[1];
-                // --i;
+                limb[i] = 0;
+                limb[i - 1] = -1;
             }
             --i;
         }
